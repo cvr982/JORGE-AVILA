@@ -1,1190 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jorge Avila Construction | General Contractor</title>
-
-  <meta
-    name="description"
-    content="Jorge Avila Construction is a licensed general contractor serving the Los Angeles area. Call 818-863-0452 for a free estimate."
-  >
-
-  <style>
-    :root {
-      --yellow: #f5c400;
-      --yellow-light: #ffd83d;
-      --black: #0b0b0b;
-      --dark: #151515;
-      --gray: #666;
-      --light: #f7f7f7;
-      --white: #ffffff;
-      --border: #e7e7e7;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--black);
-      background: var(--white);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
-
-    /* NAVIGATION */
-
-    header {
-      background: var(--black);
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 3px solid var(--yellow);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      background: var(--yellow);
-      color: var(--black);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      font-size: 18px;
-      border-radius: 4px;
-    }
-
-    .logo-text {
-      line-height: 1.1;
-    }
-
-    .logo-text span {
-      display: block;
-      color: var(--yellow);
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
-
-    .license-top {
-      display: block;
-      color: #aaa;
-      font-size: 9px;
-      letter-spacing: 1px;
-      margin-top: 5px;
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover {
-      color: var(--yellow);
-    }
-
-    .nav-button {
-      background: var(--yellow);
-      color: var(--black);
-      padding: 11px 18px;
-      border-radius: 4px;
-    }
-
-    .nav-button:hover {
-      color: var(--black) !important;
-      background: var(--yellow-light);
-    }
-
-    .menu-button {
-      display: none;
-      background: none;
-      border: 0;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 650px;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0,0,0,.95) 0%,
-          rgba(0,0,0,.82) 48%,
-          rgba(0,0,0,.55) 100%
-        ),
-        linear-gradient(135deg, #222 0%, #111 50%, #303030 100%);
-
-      color: white;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -100px;
-      bottom: -180px;
-      width: 500px;
-      height: 500px;
-      border: 90px solid rgba(245,196,0,.12);
-      transform: rotate(45deg);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 720px;
-      padding: 90px 0;
-    }
-
-    .eyebrow {
-      color: var(--yellow);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: .98;
-      letter-spacing: -2px;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 span {
-      color: var(--yellow);
-    }
-
-    .hero p {
-      color: #ddd;
-      font-size: 19px;
-      max-width: 610px;
-      margin-bottom: 34px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 4px;
-      font-weight: 800;
-      transition: .2s ease;
-    }
-
-    .button-primary {
-      background: var(--yellow);
-      color: var(--black);
-    }
-
-    .button-primary:hover {
-      background: var(--yellow-light);
-      transform: translateY(-2px);
-    }
-
-    .button-outline {
-      border: 1px solid #777;
-      color: white;
-    }
-
-    .button-outline:hover {
-      border-color: var(--yellow);
-      color: var(--yellow);
-    }
-
-    /* TRUST BAR */
-
-    .trust {
-      background: var(--yellow);
-      color: var(--black);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-    }
-
-    .trust-item {
-      padding: 24px 15px;
-      font-weight: 800;
-      border-right: 1px solid rgba(0,0,0,.15);
-    }
-
-    .trust-item:last-child {
-      border-right: none;
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      max-width: 680px;
-      margin-bottom: 48px;
-    }
-
-    .section-label {
-      color: #a17f00;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(32px, 5vw, 48px);
-      line-height: 1.05;
-      margin-bottom: 16px;
-    }
-
-    .section-header p {
-      color: var(--gray);
-      font-size: 17px;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: var(--light);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      background: white;
-      padding: 32px;
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--yellow);
-      transition: .2s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
-    }
-
-    .service-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      background: var(--black);
-      color: var(--yellow);
-      font-size: 22px;
-      margin-bottom: 20px;
-      border-radius: 4px;
-    }
-
-    .service-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: var(--gray);
-      font-size: 15px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .about-image {
-      min-height: 440px;
-      background:
-        linear-gradient(135deg, rgba(245,196,0,.9), rgba(245,196,0,.25)),
-        linear-gradient(145deg, #333, #111);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-image::before {
-      content: "JAC";
-      position: absolute;
-      font-size: 150px;
-      font-weight: 900;
-      color: rgba(0,0,0,.18);
-      bottom: -20px;
-      left: 20px;
-      letter-spacing: -12px;
-    }
-
-    .about-image::after {
-      content: "QUALITY • CRAFT • TRUST";
-      position: absolute;
-      transform: rotate(-90deg);
-      right: -105px;
-      top: 145px;
-      color: rgba(255,255,255,.8);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    .about-copy h2 {
-      font-size: clamp(34px, 5vw, 50px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-
-    .about-copy p {
-      color: var(--gray);
-      margin-bottom: 18px;
-    }
-
-    .check-list {
-      list-style: none;
-      margin: 25px 0 30px;
-    }
-
-    .check-list li {
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: var(--yellow);
-      background: var(--black);
-      display: inline-grid;
-      place-items: center;
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-      font-size: 13px;
-      border-radius: 50%;
-    }
-
-    .license-box {
-      background: var(--light);
-      border-left: 4px solid var(--yellow);
-      padding: 16px 18px;
-      margin: 25px 0 30px;
-      font-weight: 800;
-    }
-
-    .license-box span {
-      display: block;
-      color: var(--gray);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 3px;
-    }
-
-    /* PROJECTS */
-
-    .projects {
-      background: var(--black);
-      color: white;
-    }
-
-    .projects .section-label {
-      color: var(--yellow);
-    }
-
-    .projects .section-header p {
-      color: #aaa;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .project {
-      min-height: 270px;
-      background:
-        linear-gradient(135deg, rgba(245,196,0,.35), rgba(0,0,0,.25)),
-        linear-gradient(135deg, #555, #1b1b1b);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project:nth-child(2) {
-      background:
-        linear-gradient(135deg, rgba(245,196,0,.18), rgba(0,0,0,.55)),
-        linear-gradient(45deg, #444, #111);
-    }
-
-    .project:nth-child(3) {
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.12), rgba(0,0,0,.65)),
-        linear-gradient(135deg, #777, #222);
-    }
-
-    .project:nth-child(4) {
-      background:
-        linear-gradient(135deg, rgba(245,196,0,.28), rgba(0,0,0,.65)),
-        linear-gradient(135deg, #555, #222);
-    }
-
-    .project:nth-child(5) {
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.08), rgba(0,0,0,.7)),
-        linear-gradient(45deg, #666, #151515);
-    }
-
-    .project:nth-child(6) {
-      background:
-        linear-gradient(135deg, rgba(245,196,0,.35), rgba(0,0,0,.65)),
-        linear-gradient(135deg, #444, #111);
-    }
-
-    .project-label {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 22px;
-      background: linear-gradient(transparent, rgba(0,0,0,.9));
-      padding-top: 60px;
-      font-weight: 800;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: var(--yellow);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .contact h2 {
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      font-size: 18px;
-      max-width: 520px;
-      margin-bottom: 28px;
-    }
-
-    .contact-details {
-      display: grid;
-      gap: 14px;
-    }
-
-    .contact-detail {
-      background: rgba(255,255,255,.45);
-      padding: 20px;
-      border-radius: 4px;
-    }
-
-    .contact-detail small {
-      display: block;
-      text-transform: uppercase;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
-    }
-
-    .contact-detail a {
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .contact-detail a:hover {
-      text-decoration: underline;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--black);
-      color: white;
-      padding: 35px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    footer p {
-      color: #999;
-      font-size: 13px;
-    }
-
-    .footer-phone {
-      color: var(--yellow);
-      font-weight: 800;
-    }
-
-    .footer-license {
-      color: #888;
-      font-size: 11px;
-      margin-top: 5px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      .nav {
-        min-height: 68px;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: var(--black);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        border-top: 1px solid #333;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links li a {
-        display: block;
-        padding: 16px 4%;
-        border-bottom: 1px solid #222;
-      }
-
-      .nav-button {
-        background: none;
-        color: white;
-        padding: 16px 4%;
-        border-radius: 0;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .hero-content {
-        padding: 70px 0;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .trust-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-item {
-        border-right: 0;
-        border-bottom: 1px solid rgba(0,0,0,.15);
-      }
-
-      .trust-item:last-child {
-        border-bottom: 0;
-      }
-
-      section {
-        padding: 65px 0;
-      }
-
-      .service-grid,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .about-image {
-        min-height: 300px;
-      }
-
-      .project {
-        min-height: 230px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jorge Avila Construction | General Contractor</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:#111;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:92%;max-width:1100px;margin:auto}
+header{background:#0b0b0b;color:#fff;border-bottom:4px solid #f5c400;position:sticky;top:0;z-index:10}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900}
+.logo-mark{width:44px;height:44px;background:#f5c400;color:#111;display:grid;place-items:center;border-radius:4px}
+.logo-text{font-size:16px;line-height:1.1}
+.logo-text span{display:block;color:#f5c400;font-size:11px;letter-spacing:2px;margin-top:4px}
+.logo-license{display:block;color:#888;font-size:9px;letter-spacing:1px;margin-top:4px}
+.nav-links{display:flex;gap:25px;align-items:center;list-style:none;font-size:14px;font-weight:bold}
+.nav-links a:hover{color:#f5c400}
+.nav-button{background:#f5c400;color:#111!important;padding:11px 17px;border-radius:4px}
+.hero{min-height:620px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.6)),linear-gradient(135deg,#444,#111)}
+.hero-content{max-width:720px;padding:90px 0}
+.eyebrow{color:#f5c400;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,7vw,76px);line-height:.98;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 span{color:#f5c400}
+.hero p{color:#ddd;font-size:19px;max-width:620px;margin-bottom:32px}
+.buttons{display:flex;flex-wrap:wrap;gap:13px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:4px;font-weight:bold}
+.primary{background:#f5c400;color:#111}
+.outline{border:1px solid #777;color:#fff}
+.trust{background:#f5c400}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.trust-item{padding:23px;font-weight:bold;border-right:1px solid rgba(0,0,0,.15)}
+section{padding:85px 0}
+.section-label{color:#9a7900;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold;margin-bottom:10px}
+.section-header{max-width:680px;margin-bottom:45px}
+.section-header h2{font-size:clamp(34px,5vw,50px);line-height:1.05;margin-bottom:15px}
+.section-header p{color:#666;font-size:17px}
+.services{background:#f7f7f7}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service-card{background:#fff;padding:30px;border:1px solid #e5e5e5;border-top:4px solid #f5c400}
+.service-icon{width:46px;height:46px;display:grid;place-items:center;background:#111;color:#f5c400;font-size:20px;border-radius:4px;margin-bottom:18px}
+.service-card h3{font-size:20px;margin-bottom:9px}
+.service-card p{color:#666;font-size:15px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-image{min-height:430px;background:linear-gradient(135deg,rgba(245,196,0,.82),rgba(245,196,0,.15)),linear-gradient(135deg,#555,#111);position:relative}
+.about-image:after{content:"JAC";position:absolute;bottom:-30px;left:20px;font-size:150px;font-weight:900;color:rgba(0,0,0,.2)}
+.about-copy h2{font-size:clamp(34px,5vw,50px);line-height:1.05;margin-bottom:20px}
+.about-copy p{color:#666;margin-bottom:16px}
+.check-list{list-style:none;margin:24px 0}
+.check-list li{margin-bottom:11px;font-weight:bold}
+.check-list li:before{content:"✓";display:inline-grid;place-items:center;width:23px;height:23px;margin-right:9px;background:#111;color:#f5c400;border-radius:50%;font-size:12px}
+.license-box{background:#f7f7f7;border-left:4px solid #f5c400;padding:16px 18px;margin:25px 0 28px;font-weight:bold}
+.license-box small{display:block;color:#777;text-transform:uppercase;letter-spacing:1.5px;font-size:10px}
+.projects{background:#0b0b0b;color:#fff}
+.projects .section-label{color:#f5c400}
+.projects .section-header p{color:#aaa}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.project{height:270px;display:flex;align-items:flex-end;background:linear-gradient(135deg,#555,#151515)}
+.project-label{width:100%;padding:45px 20px 20px;background:linear-gradient(transparent,rgba(0,0,0,.9));font-weight:bold}
+.contact{background:#f5c400}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.contact h2{font-size:clamp(38px,5vw,58px);line-height:1;margin-bottom:20px}
+.contact p{font-size:18px;margin-bottom:25px}
+.contact-details{display:grid;gap:13px}
+.contact-detail{background:rgba(255,255,255,.45);padding:18px;border-radius:4px}
+.contact-detail small{display:block;text-transform:uppercase;font-size:10px;letter-spacing:2px;font-weight:bold}
+.contact-detail a{font-size:18px;font-weight:bold}
+footer{background:#0b0b0b;color:#fff;padding:35px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-text{color:#999;font-size:13px}
+.footer-license{color:#777;font-size:11px;margin-top:5px}
+.footer-phone{color:#f5c400;font-weight:bold}
+@media(max-width:800px){
+.nav-links{display:none}
+.hero h1{font-size:48px}
+.trust-grid,.service-grid,.about-grid,.project-grid,.contact-grid{grid-template-columns:1fr}
+.trust-item{border-right:0;border-bottom:1px solid rgba(0,0,0,.15)}
+.about-image{min-height:300px}
+.footer-inner{flex-direction:column;align-items:flex-start;gap:15px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <header>
-    <div class="container nav">
-
-      <a href="#home" class="logo">
-        <div class="logo-mark">JA</div>
-
-        <div class="logo-text">
-          JORGE AVILA
-          <span>CONSTRUCTION</span>
-          <small class="license-top">CA LICENSE #1102039</small>
-        </div>
-      </a>
-
-      <button
-        class="menu-button"
-        onclick="toggleMenu()"
-        aria-label="Open menu"
-      >
-        ☰
-      </button>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="#services" onclick="closeMenu()">Services</a></li>
-        <li><a href="#about" onclick="closeMenu()">About</a></li>
-        <li><a href="#projects" onclick="closeMenu()">Our Work</a></li>
-
-        <li>
-          <a
-            href="#contact"
-            class="nav-button"
-            onclick="closeMenu()"
-          >
-            Get a Free Estimate
-          </a>
-        </li>
-      </ul>
-
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-  <main id="home">
-
-    <section class="hero">
-      <div class="container">
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-            Licensed General Contractor • Los Angeles Area
-          </div>
-
-          <h1>
-            Built Right.<br>
-            <span>Built to Last.</span>
-          </h1>
-
-          <p>
-            Jorge Avila Construction provides dependable construction
-            and remodeling services throughout the Los Angeles area.
-            Quality workmanship, attention to detail, and service you
-            can count on.
-          </p>
-
-          <div class="buttons">
-
-            <a
-              href="#contact"
-              class="button button-primary"
-            >
-              GET A FREE ESTIMATE
-            </a>
-
-            <a
-              href="tel:18188630452"
-              class="button button-outline"
-            >
-              CALL 818-863-0452
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- TRUST BAR -->
-    <div class="trust">
-
-      <div class="container trust-grid">
-
-        <div class="trust-item">
-          QUALITY WORK
-        </div>
-
-        <div class="trust-item">
-          RELIABLE SERVICE
-        </div>
-
-        <div class="trust-item">
-          CA LICENSE #1102039
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- SERVICES -->
-    <section class="services" id="services">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <div class="section-label">
-            What We Do
-          </div>
-
-          <h2>
-            Construction services you can count on.
-          </h2>
-
-          <p>
-            From improvements and remodels to larger construction
-            projects, Jorge Avila Construction is here to help bring
-            your project to life.
-          </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-          <div class="service-card">
-            <div class="service-icon">⌂</div>
-
-            <h3>Home Remodeling</h3>
-
-            <p>
-              Transform your home with professional remodeling and
-              renovation work tailored to your needs.
-            </p>
-          </div>
-
-
-          <div class="service-card">
-            <div class="service-icon">▦</div>
-
-            <h3>Kitchen & Bath</h3>
-
-            <p>
-              Upgrade kitchens and bathrooms with clean,
-              functional, quality-focused construction.
-            </p>
-          </div>
-
-
-          <div class="service-card">
-            <div class="service-icon">▤</div>
-
-            <h3>Interior Improvements</h3>
-
-            <p>
-              Professional interior construction and improvements
-              designed around your space and goals.
-            </p>
-          </div>
-
-
-          <div class="service-card">
-            <div class="service-icon">◆</div>
-
-            <h3>Exterior Work</h3>
-
-            <p>
-              Improve the outside of your property with dependable
-              construction and finishing work.
-            </p>
-          </div>
-
-
-          <div class="service-card">
-            <div class="service-icon">+</div>
-
-            <h3>Repairs & Improvements</h3>
-
-            <p>
-              Take care of repairs, upgrades, and property
-              improvements with experienced workmanship.
-            </p>
-          </div>
-
-
-          <div class="service-card">
-            <div class="service-icon">✓</div>
-
-            <h3>General Contracting</h3>
-
-            <p>
-              A reliable partner for coordinating and completing
-              your construction project from start to finish.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-    <section id="about">
-
-      <div class="container about-grid">
-
-        <div class="about-image"></div>
-
-
-        <div class="about-copy">
-
-          <div class="section-label">
-            About Jorge Avila Construction
-          </div>
-
-          <h2>
-            Quality work. Straightforward service.
-          </h2>
-
-          <p>
-            Jorge Avila Construction is a licensed general contractor
-            serving homeowners and property owners throughout the
-            Los Angeles area.
-          </p>
-
-          <p>
-            We believe a construction project should be handled with
-            care, clear communication, and attention to the details
-            that matter.
-          </p>
-
-
-          <ul class="check-list">
-
-            <li>Professional workmanship</li>
-            <li>Clear communication</li>
-            <li>Attention to detail</li>
-            <li>Serving the Los Angeles area</li>
-
-          </ul>
-
-
-          <div class="license-box">
-            <span>California Contractor License</span>
-            #1102039
-          </div>
-
-
-          <a
-            href="#contact"
-            class="button button-primary"
-          >
-            TALK ABOUT YOUR PROJECT
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <div class="section-label">
-            Our Work
-          </div>
-
-          <h2>
-            Built with pride.
-          </h2>
-
-          <p>
-            Add photos of Jorge's actual projects here to show
-            potential customers the quality of his work.
-          </p>
-
-        </div>
-
-
-        <div class="project-grid">
-
-          <div class="project">
-            <div class="project-label">
-              Project Photo
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-label">
-              Project Photo
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-label">
-              Project Photo
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-label">
-              Project Photo
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-label">
-              Project Photo
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-label">
-              Project Photo
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-
-      <div class="container contact-grid">
-
-        <div>
-
-          <div class="section-label">
-            Let's Talk
-          </div>
-
-          <h2>
-            Ready to start your project?
-          </h2>
-
-          <p>
-            Contact Jorge Avila Construction to discuss your project
-            and request an estimate.
-          </p>
-
-
-          <a
-            href="mailto:avilajorge710@gmail.com?subject=Construction%20Project%20Inquiry"
-            class="button"
-            style="background:#0b0b0b;color:#fff;"
-          >
-            EMAIL JORGE
-          </a>
-
-        </div>
-
-
-        <div class="contact-details">
-
-          <div class="contact-detail">
-
-            <small>Phone</small>
-
-            <a href="tel:18188630452">
-              818-863-0452
-            </a>
-
-          </div>
-
-
-          <div class="contact-detail">
-
-            <small>Email</small>
-
-            <a href="mailto:avilajorge710@gmail.com">
-              avilajorge710@gmail.com
-            </a>
-
-          </div>
-
-
-          <div class="contact-detail">
-
-            <small>Service Area</small>
-
-            <strong>
-              Los Angeles Area
-            </strong>
-
-          </div>
-
-
-          <div class="contact-detail">
-
-            <small>License</small>
-
-            <strong>
-              CA Contractor License #1102039
-            </strong>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="container footer-inner">
-
-      <div>
-
-        <p>
-          © <span id="year"></span>
-          Jorge Avila Construction.
-          All rights reserved.
-        </p>
-
-        <div class="footer-license">
-          CA Contractor License #1102039
-        </div>
-
-      </div>
-
-
-      <a
-        href="tel:18188630452"
-        class="footer-phone"
-      >
-        818-863-0452
-      </a>
-
-    </div>
-
-  </footer>
-
-
-  <script>
-
-    function toggleMenu() {
-      document
-        .getElementById("navLinks")
-        .classList
-        .toggle("open");
-    }
-
-
-    function closeMenu() {
-      document
-        .getElementById("navLinks")
-        .classList
-        .remove("open");
-    }
-
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-  </script>
+<header>
+<div class="container nav">
+<a href="#home" class="logo">
+<div class="logo-mark">JA</div>
+<div class="logo-text">JORGE AVILA<span>CONSTRUCTION</span><small class="logo-license">CA LICENSE #1102039</small></div>
+</a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Our Work</a></li>
+<li><a href="#contact" class="nav-button">Get a Free Estimate</a></li>
+</ul>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<div class="eyebrow">Licensed General Contractor • Los Angeles Area</div>
+<h1>Built Right.<br><span>Built to Last.</span></h1>
+<p>Jorge Avila Construction provides dependable construction and remodeling services throughout the Los Angeles area. Quality workmanship, attention to detail, and service you can count on.</p>
+<div class="buttons">
+<a href="#contact" class="button primary">GET A FREE ESTIMATE</a>
+<a href="tel:18188630452" class="button outline">CALL 818-863-0452</a>
+</div>
+</div>
+</div>
+</section>
+
+<div class="trust">
+<div class="container trust-grid">
+<div class="trust-item">QUALITY WORK</div>
+<div class="trust-item">RELIABLE SERVICE</div>
+<div class="trust-item">CA LICENSE #1102039</div>
+</div>
+</div>
+
+<section class="services" id="services">
+<div class="container">
+<div class="section-header">
+<div class="section-label">What We Do</div>
+<h2>Construction services you can count on.</h2>
+<p>From improvements and remodels to larger construction projects, Jorge Avila Construction is here to help bring your project to life.</p>
+</div>
+
+<div class="service-grid">
+<div class="service-card"><div class="service-icon">⌂</div><h3>Home Remodeling</h3><p>Professional remodeling and renovation work tailored to your needs.</p></div>
+<div class="service-card"><div class="service-icon">▦</div><h3>Kitchen &amp; Bath</h3><p>Clean, functional, quality-focused kitchen and bathroom construction.</p></div>
+<div class="service-card"><div class="service-icon">▤</div><h3>Interior Improvements</h3><p>Professional interior construction and improvements designed around your space.</p></div>
+<div class="service-card"><div class="service-icon">◆</div><h3>Exterior Work</h3><p>Dependable construction and finishing work to improve your property.</p></div>
+<div class="service-card"><div class="service-icon">+</div><h3>Repairs &amp; Improvements</h3><p>Repairs, upgrades, and property improvements with quality workmanship.</p></div>
+<div class="service-card"><div class="service-icon">✓</div><h3>General Contracting</h3><p>A reliable partner for coordinating and completing your construction project.</p></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container about-grid">
+<div class="about-image"></div>
+<div class="about-copy">
+<div class="section-label">About Jorge Avila Construction</div>
+<h2>Quality work. Straightforward service.</h2>
+<p>Jorge Avila Construction is a licensed general contractor serving homeowners and property owners throughout the Los Angeles area.</p>
+<p>We believe a construction project should be handled with care, clear communication, and attention to the details that matter.</p>
+<ul class="check-list">
+<li>Professional workmanship</li>
+<li>Clear communication</li>
+<li>Attention to detail</li>
+<li>Serving the Los Angeles area</li>
+</ul>
+<div class="license-box"><small>California Contractor License</small>#1102039</div>
+<a href="#contact" class="button primary">TALK ABOUT YOUR PROJECT</a>
+</div>
+</div>
+</section>
+
+<section class="projects" id="projects">
+<div class="container">
+<div class="section-header">
+<div class="section-label">Our Work</div>
+<h2>Built with pride.</h2>
+<p>Add photos of Jorge's actual projects here to show potential customers the quality of his work.</p>
+</div>
+<div class="project-grid">
+<div class="project"><div class="project-label">Project Photo</div></div>
+<div class="project"><div class="project-label">Project Photo</div></div>
+<div class="project"><div class="project-label">Project Photo</div></div>
+<div class="project"><div class="project-label">Project Photo</div></div>
+<div class="project"><div class="project-label">Project Photo</div></div>
+<div class="project"><div class="project-label">Project Photo</div></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container contact-grid">
+<div>
+<div class="section-label">Let's Talk</div>
+<h2>Ready to start your project?</h2>
+<p>Contact Jorge Avila Construction to discuss your project and request an estimate.</p>
+<a href="mailto:avilajorge710@gmail.com?subject=Construction%20Project%20Inquiry" class="button" style="background:#111;color:#fff;">EMAIL JORGE</a>
+</div>
+
+<div class="contact-details">
+<div class="contact-detail"><small>Phone</small><a href="tel:18188630452">818-863-0452</a></div>
+<div class="contact-detail"><small>Email</small><a href="mailto:avilajorge710@gmail.com">avilajorge710@gmail.com</a></div>
+<div class="contact-detail"><small>Service Area</small><strong>Los Angeles Area</strong></div>
+<div class="contact-detail"><small>License</small><strong>CA Contractor License #1102039</strong></div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container footer-inner">
+<div>
+<div class="footer-text">&copy; <span id="year"></span> Jorge Avila Construction. All rights reserved.</div>
+<div class="footer-license">CA Contractor License #1102039</div>
+</div>
+<a href="tel:18188630452" class="footer-phone">818-863-0452</a>
+</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
